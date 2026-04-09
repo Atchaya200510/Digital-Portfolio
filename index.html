@@ -1,175 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atchaya M - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #d6e4ff; /* Light Blue Background */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atchaya M - Portfolio</title>
 
-        header {
-            background-color: #941919;
-            color: #fff;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        /* Profile Picture - Aligned Left Near Name */
-        .profile-picture {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px; /* Add some space between image and text */
-            border: 2px solid white;
-        }
+<style>
+html {
+    scroll-behavior: smooth;
+}
 
-        .header-content h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-    
-        nav{
-            background-color: #333;
-            text-align: center;
-            padding: 0.5rem 0;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f4f6fc;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #5f2c82, #49a09d);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
 
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 4px solid white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1rem;
-        }
+}
 
-        .section-content {
-            background-color: #fff;
-            padding: 2rem;
-            margin: 1rem auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            text-align: justify;
-        }
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .download-button {
-            background-color: #333;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
-        }
+.header-content h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
 
-        .download-button:hover {
-            background-color: #555;
-        }
+/* NAVBAR */
+nav {
+    background: #222;
+    padding: 10px;
+}
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a {
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #49a09d;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* SECTION */
+.section-content {
+    background: #fff;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease forwards;
+
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-content:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* SKILLS */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#skills li {
+    list-style: none;
+    background: #e0e7ff;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+/* PROJECTS */
+
+.project {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #5f2c82;
+    background: #f9f9ff;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    background: #eef1ff;
+}
+
+#projects ul {
+    list-style: none;
+    padding: 0;
+}
+
+#projects li {
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+.download-button {
+    background: #5f2c82;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.download-button:hover {
+    background: #4a1f66;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: #fff;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-picture {
+        margin-bottom: 10px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <!-- Profile picture inside header, left-aligned near name -->
-        <img src="image.jpg" alt="Atchaya M" class="profile-picture">
-        <div class="header-content">
-            <h1>Atchaya M</h1>
-            <p>B.Sc. Computer Science</p>
-        </div>
-    </header>
+<header>
+    <img src="c:\Users\atcha\Downloads\image.jpg.png" alt="Atchaya M" class="profile-picture">
+    <div class="header-content">
+        <h1>ATCHAYA M</h1>
+        <p>Web Developer | AI Enthusiast</p>
+    </div>
+</header>
 
-    <nav>
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="about">
+    <div class="section-content">
+        <h2>About Me</h2>
+        <p>
+            I am a Computer Science student passionate about building web applications and AI-based solutions.
+            I enjoy creating simple, user-friendly systems that solve real-world problems.
+        </p>
+    </div>
+</section>
+
+<section id="education">
+    <div class="section-content">
+        <h2>Education</h2>
+        <p><b>University of Madras</b> - B.Sc. Computer Science (2023–2026)</p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="section-content">
+        <h2>Skills</h2>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>SQL</li>
         </ul>
-    </nav>
+    </div>
+</section>
 
-    <section id="about">
-        <div class="section-content">
-            <h2>About Me</h2>
-            <p>I'm a passionate <b>Computer Science</b> student who loves coding and technology. I enjoy learning new programming concepts and developing projects that solve real-world problems.</p>
+<section id="projects">
+    <div class="section-content">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Inventory Management System</h3>
+            <p>
+                Developed a system for book publication to manage inventory, track stock levels, 
+                and update records efficiently using database integration.
+            </p>
+            <a href="https://github.com/Atchaya200510/Inventory-Management-System-for-Book-Publication" target="_blank" class="download-button">View Project</a>
         </div>
-    </section>
 
-    <section id="education">
-        <div class="section-content">
-            <h2>Education</h2>
-            <p><b>University of Madras</b> - B.Sc. Computer Science (2023-2026)</p>
+        <div class="project">
+            <h3>Scribble to Digital</h3>
+            <p>
+                AI-based application that converts handwritten notes into digital text, 
+                improving accessibility and productivity.
+            </p>
+            <a href="https://github.com/Atchaya200510/Scribble-to-digital..git" target="_blank" class="download-button">View Project</a>
         </div>
-    </section>
 
-    <section id="skills">
-        <div class="section-content">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>MS Word</li>
-                <li>MS Excel</li>
-                <li>PowerPoint</li>
-            </ul>
+        <div class="project">
+            <h3>ServiceNow Access Control</h3>
+            <p>
+                Implemented user role management, access control, and workflow automation 
+                using the ServiceNow platform.
+            </p>
+            <a href="https://github.com/Atchaya200510/Optimizing-User-Group-and-Role-Management-with-Access-Control-and-Workflows" target="_blank" class="download-button">View Project</a>
         </div>
-    </section>
 
-    <section id="projects">
-        <div class="section-content">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Digital Portfolio Website</a></li>
-            </ul>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section id="resume">
-        <div class="section-content" style="text-align: center;">
-            <h2>Resume</h2>
-            <!-- Corrected Resume Download Button -->
-            <a href="https://drive.google.com/file/d/1tyoCMTLthMxe3BpPBMtd2JWpMKEdEDhf/view?usp=drivesdk" class="download-button">Download CV</a>
-        </div>
-    </section>
+<section id="resume">
+    <div class="section-content" style="text-align:center;">
+        <h2>Resume</h2>
+        <a href="https://drive.google.com/file/d/1tyoCMTLthMxe3BpPBMtd2JWpMKEdEDhf/view?usp=drivesdk" class="download-button">Download CV</a>
+    </div>
+</section>
 
-    <section id="contact">
-        <div class="section-content">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:atchaya102005@gmail.com">atchaya102005@gmail.com</a></p>
-        </div>
-    </section>
+<section id="contact">
+    <div class="section-content">
+        <h2>Contact</h2>
+        <p>📧 Email: <a href="mailto:atchaya102005@gmail.com">atchaya102005@gmail.com</a></p>
+        <p>💻 GitHub: <a href="https://github.com/Atchaya200510">Atchaya200510</a></p>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Atchaya M. All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>© 2026 Atchaya M | Built with ❤️</p>
+</footer>
 
 </body>
 </html>
